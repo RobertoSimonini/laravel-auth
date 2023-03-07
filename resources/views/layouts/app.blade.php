@@ -19,7 +19,7 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body>
+<body class="bg-dark">
     <div id="app">
 
 
@@ -85,7 +85,7 @@
             </div>
         </nav>
 
-        <main class="">
+        <main>
             @yield('content')
         </main>
     </div>
