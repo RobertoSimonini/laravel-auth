@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\HomeController as GuestHomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,9 @@ Route::get('/', [GuestHomeController::class, 'index']);
 
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
+
+    // Crud routes 
+    Route::resource('projects', ProjectController::class);
 });
 
 Route::middleware('auth')->name('profile.')->prefix('profile')->group(function () {
