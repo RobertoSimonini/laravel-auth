@@ -29,15 +29,20 @@
       </div>
 
       {{-- Bottoni di redirect  --}}
-      <div class="buttons mt-3 d-flex justify-content-end">
+      <div class="buttons mt-3 d-flex justify-content-between">
           <a href="{{$project->full_code || 'https://github.com/RobertoSimonini?tab=repositories'}}" class="btn btn-success me-2">View full code</a>
-          <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" class="me-2">
-            @method('DELETE')
-            @csrf
+
+          <div class="d-flex">
+            <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning text-white me-2"><i class="fa-solid fa-pencil"></i> Edit</a>
             
-            <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Remove</button>
-          </form>
-          <a href="{{url('admin/projects') }}" class="btn btn-secondary">Back</a>
+            <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" class="me-2">
+              @method('DELETE')
+              @csrf
+              
+              <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Remove</button>
+            </form>
+            <a href="{{url('admin/projects') }}" class="btn btn-secondary">Back</a>
+          </div>
       </div>
 
 </div>

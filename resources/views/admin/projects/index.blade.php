@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<body class="bg-dark">
     <div class="container">
 
         {{-- Title della sezione  --}}
-        <h1 class="text-center text-danger my-5">
+        <h1 class="text-center text-primary my-5">
             My Favourite Projects
         </h1>
 
@@ -42,8 +43,9 @@
 
         {{-- Bottoni di redirect  --}}
         <div class="buttons my-5 d-flex justify-content-center">
-            <a href="{{route('admin.projects.create')}}" class="btn btn-success">Create a Project</a>
+            <a href="{{route('admin.projects.create')}}" class="btn btn-success"><i class="fa-solid fa-plus"></i> Add a Project</a>
         </div>
 
     </div>
+</body>
 @endsection
