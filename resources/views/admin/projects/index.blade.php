@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        <h1 class="text-center text-primary my-5">
+        <h1 class="text-center text-danger my-5">
             Projects
         </h1>
 

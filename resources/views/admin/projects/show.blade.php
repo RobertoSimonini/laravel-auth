@@ -9,6 +9,8 @@
 </header>
 
 <div class="container">
+
+    {{-- Card --}}
     <div class="card h-100 mb-3">
         <div class="row g-0">
           <div class="col-md-4">
@@ -25,5 +27,12 @@
           </div>
         </div>
       </div>
+
+      {{-- Bottoni di redirect  --}}
+      <div class="buttons mt-3 d-flex justify-content-between">
+          <a href="{{$project->full_code || 'https://github.com/RobertoSimonini?tab=repositories'}}" class="btn btn-success">View full code</a>
+          <a href="{{url('admin/projects') }}" class="btn btn-secondary">Back</a>
+      </div>
+
 </div>
 @endsection
