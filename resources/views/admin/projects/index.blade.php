@@ -23,14 +23,17 @@
                       {{-- Qui inserisco i bottoni  --}}
                       <div class="buttons d-flex justify-content-center">
                         <a href="{{route('admin.projects.show', $project->id)}}" class="btn btn-primary me-2"><i class="fa-solid fa-circle-info"></i> More </a>
+
+                        <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning text-white me-2"><i class="fa-solid fa-pencil"></i> Edit</a>
+
                         <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
                         @method('DELETE')
                         @csrf
                         
-                        <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Remove</button>
+                            <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Remove</button>
                         </form>
-
                       </div>
+                      
                     </div>
                   </div>
             </div>
