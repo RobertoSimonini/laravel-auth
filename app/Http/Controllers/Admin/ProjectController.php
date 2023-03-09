@@ -80,7 +80,7 @@ class ProjectController extends Controller
 
         $project->update($data);
 
-        return redirect()->route('admin.projects.show', $project->id);
+        return redirect()->route('admin.projects.show', $project->id)->with('type', 'warning')->with('msg', "Il Progetto $project->title è stato modificato con successo.");
     }
 
     /**
