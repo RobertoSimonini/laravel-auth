@@ -11,7 +11,7 @@
             </h1>
         </header>
         
-        <form action="{{route('admin.projects.store')}}" method="POST" class="text-white text-center">
+        <form action="{{route('admin.projects.store')}}" method="POST" class="text-white text-center" enctype="multipart/form-data">
             @csrf
             
             <div class="row">
@@ -22,7 +22,7 @@
 
                 <div class="col-6 mb-3">
                     <label for="image" class="form-label">Image </label>
-                    <input type="url" class="form-control" id="image" placeholder="Inserisci l'url dell'immagine" name="image">
+                    <input type="file" class="form-control" id="image" placeholder="Inserisci l'url dell'immagine" name="image">
                 </div>
                 
                 <div class="col-12 mb-3">

@@ -14,7 +14,7 @@
             @foreach ($projects as $project)
             <div class="col-4">
                 <div class="card text-center">
-                    <img src="{{$project->image}}" class="card-img-top" alt="{{$project->title}}">
+                    <img src="{{asset('storage/' . $project->image)}}" class="card-img-top" alt="{{$project->title}}">
 
                     {{-- Contenuto della card  --}}
                     <div class="card-body">

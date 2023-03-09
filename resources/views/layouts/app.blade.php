@@ -27,7 +27,7 @@
 
 
         @include('includes.navbar')
-
+        @include('includes.alert')
         <main>
             @yield('content')
         </main>
