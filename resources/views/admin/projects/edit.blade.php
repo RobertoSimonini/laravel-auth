@@ -11,7 +11,7 @@
             </h1>
         </header>
         
-        <form action="{{route('admin.projects.update', $project->id)}}" method="POST" class="text-white text-center">
+        <form action="{{route('admin.projects.update', $project->id)}}" method="POST" class="text-white text-center" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             
@@ -23,7 +23,7 @@
 
                 <div class="col-6 mb-3">
                     <label for="image" class="form-label">Image </label>
-                    <input type="url" class="form-control" id="image" placeholder="Inserisci l'url dell'immagine" name="image" value="{{old('image', $project->image)}}">
+                    <input type="file" class="form-control" id="image" placeholder="Inserisci l'url dell'immagine" name="image" value="{{old('image', $project->image)}}">
                 </div>
                 
                 <div class="col-12 mb-3">

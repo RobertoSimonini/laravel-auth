@@ -30,7 +30,7 @@
 
       {{-- Bottoni di redirect  --}}
       <div class="buttons mt-3 d-flex justify-content-between">
-          <a href="{{$project->full_code || 'https://github.com/RobertoSimonini?tab=repositories'}}" class="btn btn-success me-2">View full code</a>
+          <a href="{{$project->full_code}}" class="btn btn-success me-2">View full code</a>
 
           <div class="d-flex">
             <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning text-white me-2"><i class="fa-solid fa-pencil"></i> Edit</a>

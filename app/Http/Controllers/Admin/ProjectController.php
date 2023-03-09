@@ -72,6 +72,12 @@ class ProjectController extends Controller
     {
         $data = $request->all();
 
+        if (Arr::exists($data, 'image')) {
+            if ($project->image) Storage::delete($project->image);
+            $img_url = Storage::put('projects', $data['image']);
+            $data['image'] = $img_url;
+        }
+
         $project->update($data);
 
         return redirect()->route('admin.projects.show', $project->id);
