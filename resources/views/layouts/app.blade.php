@@ -32,6 +32,21 @@
             @yield('content')
         </main>
     </div>
+
+    @yield('scripts')
+
+    <script>
+        const deleteForms = document.querySelectorAll('.deleteForm');
+        
+        deleteForms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const hasConfirmed = confirm("Sei sicuro di voler cancellare questo elemento, l'azione è irreversibile.");
+                if(hasConfirmed) form.submit();
+            })
+        });
+
+    </script>
 </body>
 
 </html>

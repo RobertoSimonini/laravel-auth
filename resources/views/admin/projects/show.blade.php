@@ -35,7 +35,7 @@
           <div class="d-flex">
             <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning text-white me-2"><i class="fa-solid fa-pencil"></i> Edit</a>
             
-            <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" class="me-2">
+            <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" class="me-2 deleteForm">
               @method('DELETE')
               @csrf
               
@@ -44,6 +44,9 @@
             <a href="{{url('admin/projects') }}" class="btn btn-secondary"><i class="fa-solid fa-rotate-left"></i> Back</a>
           </div>
       </div>
-
 </div>
+@endsection
+
+@section('scripts')
+        
 @endsection

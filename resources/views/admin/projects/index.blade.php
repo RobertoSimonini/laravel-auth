@@ -27,7 +27,7 @@
 
                         <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning text-white me-2"><i class="fa-solid fa-pencil"></i> Edit</a>
 
-                        <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
+                        <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" class="deleteForm">
                         @method('DELETE')
                         @csrf
                         
@@ -47,5 +47,10 @@
         </div>
 
     </div>
+
+    @section('scripts')
+        
+    @endsection
+
 </body>
 @endsection
