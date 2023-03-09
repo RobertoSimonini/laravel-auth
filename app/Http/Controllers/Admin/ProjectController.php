@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -34,6 +36,10 @@ class ProjectController extends Controller
         $data = $request->all();
 
         $project = new Project();
+
+        if (Arr::exists($data, 'image')) {
+            Storage::put('projects', $data['image']);
+        }
 
         $project->fill($data);
 
@@ -77,6 +83,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return to_route('admin.projects.index');
+        return to_route('admin.projects.index')->with('type', 'danger')->with('msg', "Il Progetto $project->title è stato eliminato con successo.");
     }
 }

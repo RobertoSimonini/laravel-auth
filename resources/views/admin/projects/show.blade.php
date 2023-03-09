@@ -41,7 +41,7 @@
               
               <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Remove</button>
             </form>
-            <a href="{{url('admin/projects') }}" class="btn btn-secondary">Back</a>
+            <a href="{{url('admin/projects') }}" class="btn btn-secondary"><i class="fa-solid fa-rotate-left"></i> Back</a>
           </div>
       </div>
 
